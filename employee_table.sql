@@ -1,5 +1,5 @@
 CREATE TABLE employee (
-    employee_id INT PRIMARY KEY,
+    employee_id INT PRIMARY KEY AUTO_INCREMENT = 100,
     first_name VARCHAR(30),
     last_name VARCHAR(30),
     birth_date DATE,
