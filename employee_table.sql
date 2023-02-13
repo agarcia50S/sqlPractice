@@ -1,5 +1,5 @@
 CREATE TABLE employee (
-    employee_id INT PRIMARY KEY AUTO_INCREMENT = 100,
+    employee_id INT PRIMARY KEY AUTO_INCREMENT,
     first_name VARCHAR(30),
     last_name VARCHAR(30),
     birth_date DATE,
@@ -7,9 +7,10 @@ CREATE TABLE employee (
     salary INT,
     super_id INT, -- will point to employee_id
     branch_id INT -- will point to branch_table branch_id
-);
+)
+AUTO_INCREMENT = 100; -- set start value;
 
 -- relating super_id to employee_id
 ALTER TABLE employee ADD FOREIGN KEY(super_id)
 -- when employee_id value removed, add null to super_id
-REFERENCES employee(employee_id) ON DELETE SET NULL
+REFERENCES employee(employee_id) ON DELETE SET NULL;
